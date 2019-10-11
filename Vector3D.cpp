@@ -8,14 +8,6 @@ Vector3D::Vector3D(double x,double y,double z)
 : x(x), y(y),z(z) {}
       Vector3D::Vector3D()
 : x(0), y(0),z(0) {}
-Vector3D Vector3D::plus(const Vector3D& vector) {
-        Vector3D result;
-        result.x = vector.x+this->x;
-        result.y = vector.y+this->y;
-        result.z = vector.z+this->z;
-
-        return result;
-    }
     Vector3D operator+(const Vector3D& left, const Vector3D& right) {
         Vector3D result;
         result.x = left.x+right.x;
@@ -41,13 +33,6 @@ Vector3D Vector3D::plus(const Vector3D& vector) {
     bool operator==(const Vector3D& left, const Vector3D& right) {
         return (left.x==right.x && left.y==right.y && left.z==right.z);
     }
-    Vector3D Vector3D::minus(const Vector3D& vector) {
-        Vector3D result;
-        result.x = this->x-vector.x;
-        result.y = this->y-vector.y;
-        result.z = this->z-vector.z;
-        return result;
-    }
      Vector3D Vector3D::crossProduct(const Vector3D& vector) {
         Vector3D result;
         result.x = this->y*vector.z-this->z*vector.y;
@@ -64,9 +49,6 @@ Vector3D Vector3D::plus(const Vector3D& vector) {
     }
     double Vector3D::scalarProduct(const Vector3D& vector) {
         return this->x*vector.x+this->y*vector.y+this->z*vector.z;
-    }
-    bool Vector3D::isEqual(const Vector3D& vector) {
-        return (this->x==vector.x && this->y==vector.y && this->z==vector.z);
     }
     const double Vector3D::getLength() const {
         return sqrt(this->x*this->x+this->y*this->y+this->z*this->z);
@@ -96,5 +78,8 @@ Vector3D Vector3D::plus(const Vector3D& vector) {
     }
     double  Vector3D::getZ() {
         return z;
+    }
+    Vector3D operator""_vect3D(long double n) {
+        return  Vector3D(n,n,n);
     }
 

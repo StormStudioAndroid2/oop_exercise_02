@@ -17,13 +17,9 @@ private:
     friend bool operator>(const Vector3D& left, const Vector3D& right);
     friend bool operator<(const Vector3D& left, const Vector3D& right);
     friend bool operator==(const Vector3D& left, const Vector3D& right);
-
-    Vector3D plus(const Vector3D& vector);
-    Vector3D minus(const Vector3D& vector);
     Vector3D crossProduct(const Vector3D& vector);
     void lambdaProduct(double lambda);
     double scalarProduct(const Vector3D& vector);
-    bool isEqual(const Vector3D& vector);
     const double getLength() const ;
     double getAngle( Vector3D& vector);
     double getX();
@@ -31,3 +27,4 @@ private:
     double getZ();
 
 };
+    Vector3D operator""_vect3D(long double n);
