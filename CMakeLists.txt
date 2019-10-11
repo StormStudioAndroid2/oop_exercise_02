@@ -9,4 +9,4 @@ Vector3D.h
 Vector3D.cpp
 )
 
-set_property(TARGET oop_exercise_02 PROPERTY CXX_STANDART 11)
+set_property(TARGET oop_exercise_02 PROPERTY CXX_STANDARD 11)

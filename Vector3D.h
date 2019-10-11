@@ -13,6 +13,7 @@ private:
     Vector3D(double x,double y,double z);
     Vector3D();
     friend Vector3D operator+(const Vector3D& left, const Vector3D& right);
+    friend Vector3D operator*(double a);
     friend Vector3D operator-(const Vector3D& left, const Vector3D& right);
     friend bool operator>(const Vector3D& left, const Vector3D& right);
     friend bool operator<(const Vector3D& left, const Vector3D& right);
