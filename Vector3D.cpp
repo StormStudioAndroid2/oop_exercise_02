@@ -41,12 +41,37 @@ Vector3D::Vector3D(double x,double y,double z)
 
         return result;
     }
+   Vector3D operator*(const Vector3D& left, const double right) {
+        Vector3D result;
+         result.x = left.x*right;
+        result.y = left.y*right;
+        result.z = left.z*right;
+
+        return result;
+    }
+std::ostream& operator<< (std::ostream &out, const Vector3D &vector)
+{
+    // Поскольку operator<< является другом класса Point, то мы имеем прямой доступ к членам Point
+    out << vector.x << " " << vector.y << " " << vector.z << "";
+ 
+    return out;
+}
     void Vector3D::lambdaProduct(double lambda) {
         this->x*=lambda;
         this->y*=lambda;
         this->z*=lambda;
 
     }
+std::istream& operator>> (std::istream &in, Vector3D &vector)
+{
+    // Поскольку operator>> является другом класса Point, то мы имеем прямой доступ к членам Point
+    // Обратите внимание, параметр point (объект класса Point) должен быть не константным, чтобы мы имели возможность изменить члены класса
+    in >> vector.x;
+    in >> vector.y;
+    in >> vector.z;
+ 
+    return in;
+}
     double Vector3D::scalarProduct(const Vector3D& vector) {
         return this->x*vector.x+this->y*vector.y+this->z*vector.z;
     }

@@ -13,9 +13,11 @@ private:
     Vector3D(double x,double y,double z);
     Vector3D();
     friend Vector3D operator+(const Vector3D& left, const Vector3D& right);
-    friend Vector3D operator*(double a);
+    friend Vector3D operator*(const Vector3D& left, const double right);
+    friend std::ostream& operator<< (std::ostream &out, const Vector3D &vector);
     friend Vector3D operator-(const Vector3D& left, const Vector3D& right);
     friend bool operator>(const Vector3D& left, const Vector3D& right);
+    friend std::istream& operator>> (std::istream &in, Vector3D &vector);
     friend bool operator<(const Vector3D& left, const Vector3D& right);
     friend bool operator==(const Vector3D& left, const Vector3D& right);
     Vector3D crossProduct(const Vector3D& vector);

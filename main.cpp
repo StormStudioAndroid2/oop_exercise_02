@@ -6,15 +6,16 @@ int main() {
     int x1,x2,y1,y2,z1,z2;
     //literal using
     Vector3D literal = 3.0_vect3D;
-    std::cin >> x1 >> y1 >> z1;
-    std::cin >> x2 >> y2 >> z2;
+ 
     std::cout.precision(6);
-    Vector3D vector1(x1,y1,z1);
-    Vector3D vector2(x2,y2,z2);
+    Vector3D vector1;
+    Vector3D vector2;
+    std::cin >> vector1;
+    std::cin >> vector2;
     Vector3D result = vector1+vector2;
-    std::cout << result.getX() << " " << result.getY() << " " << result.getZ() << std::endl;
+    std::cout << result << std::endl;
     result = vector1-vector2;
-    std::cout << result.getX() << " " << result.getY() << " " << result.getZ() <<  std::endl;
+    std::cout << result <<  std::endl;
     std::cout << vector1.getAngle(vector2) <<  std::endl;
     std::cout << vector1.getLength() <<  std::endl;
     std::cout << vector2.getLength() <<  std::endl;
